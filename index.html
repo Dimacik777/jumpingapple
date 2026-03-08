@@ -66,36 +66,6 @@
             user-select: none;
         }
 
-        /* Custom scrollbar for slider */
-        input[type=range] {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            height: 36px;
-            width: 36px;
-            border-radius: 50%;
-            background: #00ff00;
-            cursor: pointer;
-            margin-top: -14px;
-            border: 4px solid white;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 8px;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-
         /* Twinkling stars animation */
         @keyframes twinkle {
 
@@ -820,34 +790,6 @@
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 5.964H5.078z"></path>
                                 </svg>
                             </a>
-                        </div>
-
-                        {/* Slider UI */}
-                        <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 w-[90%] md:w-3/4 max-w-2xl bg-black/60 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-white/20 z-50 pointer-events-auto">
-                            <div className="flex justify-between text-xs text-white/50 mb-2 font-mono">
-                                <span>$0</span>
-                                <span>$150k</span>
-                                <span>$300k+</span>
-                            </div>
-                            <input
-                                type="range"
-                                min="0"
-                                max="350000"
-                                step="1000"
-                                value={marketCap}
-                                onMouseDown={() => isManual.current = true}
-                                onMouseUp={() => isManual.current = false}
-                                onTouchStart={() => isManual.current = true}
-                                onTouchEnd={() => isManual.current = false}
-                                onChange={(e) => {
-                                    isManual.current = true;
-                                    setMarketCap(Number(e.target.value));
-                                }}
-                                className="w-full"
-                            />
-                            <div className="text-center mt-2 text-sm text-white/70">
-                                Drag to Test Levels (Live Fetching Pauses While Dragging)
-                            </div>
                         </div>
 
                     </div>
